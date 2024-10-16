@@ -6,26 +6,26 @@
 /*   By: luissanchez <luissanchez@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 12:03:10 by luisanch          #+#    #+#             */
-/*   Updated: 2024/10/16 15:22:59 by luissanchez      ###   ########.fr       */
+/*   Updated: 2024/10/16 16:26:01 by luissanchez      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int ft_error_printing(char *str)
+int	ft_error_printing(char *str)
 {
-    printf("%s", str);
-    return(1);
+	printf("%s", str);
+	return (1);
 }
 
-int ft_strlen (char *str)
+int	ft_strlen(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(str[i] != '0')
-        i++;
-    return(i);
+	i = 0;
+	while (str[i] != '0')
+		i++;
+	return (i);
 }
 
 int	ft_atoi(char *str)
@@ -52,21 +52,21 @@ int	ft_atoi(char *str)
 	return (sign * nb);
 }
 
-size_t get_time(void)
+size_t	get_time(void)
 {
-    struct timeval time;
+	struct timeval	time;
 
-    if(gettimeofday(&time, NULL) == -1)
+	if (gettimeofday(&time, NULL) == -1)
 		ft_error_printing("gettimeofday() error\n");
-    return(time.tv_sec * 1000 + time.tv_usec / 1000);
+	return (time.tv_sec * 1000 + time.tv_usec / 1000);
 }
 
-int ft_usleep (size_t miliseconds)
+int	ft_usleep(size_t miliseconds)
 {
-    size_t start;
+	size_t	start;
 
-    start = get_time();
-    while((get_time() - start) < miliseconds)
-        usleep(500);
-    return(0);
+	start = get_time();
+	while ((get_time() - start) < miliseconds)
+		usleep(500);
+	return (0);
 }

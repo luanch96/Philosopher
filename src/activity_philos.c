@@ -6,7 +6,7 @@
 /*   By: luissanchez <luissanchez@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 15:47:16 by luisanch          #+#    #+#             */
-/*   Updated: 2024/10/16 15:13:17 by luissanchez      ###   ########.fr       */
+/*   Updated: 2024/10/16 15:54:37 by luissanchez      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	think(t_philo *philo)
 {
 	print_text ("is thinking", philo, philo->id);
 }
-
 
 void	dream(t_philo *philo)
 {
@@ -49,4 +48,3 @@ void	eat(t_philo *philo)
 	pthread_mutex_unlock(philo->right_fork);
 	return ;
 }
-
