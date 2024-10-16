@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eviscont <eviscont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luissanchez <luissanchez@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:45:49 by luisanch          #+#    #+#             */
-/*   Updated: 2024/08/22 19:36:16 by eviscont         ###   ########.fr       */
+/*   Updated: 2024/10/16 15:28:21 by luissanchez      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int check_content(char *arg)
     int i;
 
     i = 0;
-    while(arg[i] != '0')
+    while(arg[i] != '\0')
     {
         if(arg[i] < '0' || arg[i] > '9')
             return(1);
@@ -48,7 +48,8 @@ int check_content(char *arg)
 
 int check_nbr_args(char **argv)
 {
-    if (ft_atoi(argv[1]) > PHILO_MAX || ft_atoi(argv[1]) <= 0)
+    if (ft_atoi(argv[1]) > PHILO_MAX
+            || ft_atoi(argv[1]) <= 0 || check_content(argv[1]))
             return (ft_error_printing("Invalid number philosophers\n"));
     if (ft_atoi(argv[2]) <= 0 || check_content(argv[2]) == 1)
             return (ft_error_printing("Invalid time to die\n"));
