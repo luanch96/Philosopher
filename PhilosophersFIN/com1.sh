@@ -1,0 +1,1 @@
+make re && valgrind --leak-check=full --log-file=test.txt ./philo 5 800 200 200
